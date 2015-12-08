@@ -1,3 +1,39 @@
 // Place all the styles related to the gifts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body{
+  background-image: url('charlie_brown.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right-top;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-size: 100%;
+}
+
+.home_add{
+  text-align: center;
+  padding-top: 160px;
+}
+
+.brand_image{
+  height: 30px;
+  width: 30px;
+  margin-top: -7px;
+}
+
+.gift_image{
+  height: 250px;
+  width: 250px;
+  margin-left: 35px;
+  border-radius: 15px;
+}
+
+.gift_image_show{
+  height: 300px;
+  width: 300px;
+  margin-left: 100px;
+  border-radius: 15px;
+}

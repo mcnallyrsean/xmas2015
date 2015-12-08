@@ -20,6 +20,8 @@ class GiftsController < ApplicationController
       url: params[:url],
       user_id: current_user.id
       )
+    flash[:success] = "Gift request sent to Santa!"
+    redirect_to "/gifts/#{@gift.id}"
   end
 
   def show
@@ -27,11 +29,27 @@ class GiftsController < ApplicationController
   end
 
   def edit
+    @gift = Gift.find_by(id: params[:id])
   end
 
   def update
+    @gift = Gift.find_by(id: params[:id])
+    @gift.update(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description],
+      image: params[:image],
+      url: params[:url],
+      user_id: current_user.id
+      )
+    flash[:info] = "Gift updated. We'll pass it along to St. Nick!"
+    redirect_to "/gifts/#{@gift.id}"
   end
 
   def destroy
+    gift = Gift.find_by(id: params[:id])
+    gift.destroy!
+    flash[:danger] = "Gift request has been yanked from Santa's hands."
+    redirect_to "/gifts"
   end
 end

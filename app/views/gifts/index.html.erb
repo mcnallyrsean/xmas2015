@@ -1,7 +1,17 @@
-<% @gifts.each do |gift| %>
-  <h2><%= gift.name %></h2>
-  <p><%= gift.price %></p>
-  <p><%= gift.description %></p>
-  <p><%= gift.image %></p>
-  <p><%= gift.url %></p>
-<% end %>
+<div class="row">
+  <% @gifts.each do |gift| %>
+  <div class = "col-md-4">
+    <div class = "panel panel-default">
+      <div class = "panel-heading">
+        <h2><%= link_to gift.name, "/gifts/#{gift.id}" %></h2>
+      </div>
+      <div class="panel-body">
+        <p>$<%= gift.price %></p>
+        <p><%= gift.description %></p>
+        <p><%= link_to "Buy here", gift.url, target: "_blank" %></p>
+        <p><%= image_tag(gift.image, :class => "gift_image") %></p>
+      </div>
+    </div>
+   </div> 
+  <% end %>
+</div>

@@ -1,5 +1,20 @@
-<h1><%= @gift.name %></h1>
-<p><%= @gift.price %></p>
-<p><%= @gift.description %></p>
-<p><%= @gift.image %></p>
-<p><%= @gift.url %></p>
+<div class="jumbotron">
+  <h1>Get a load of this gift!</h1>
+  <div class = "panel panel-default">
+      <div class = "panel-heading">
+        <h2 class = "panel-title"><%= @gift.name %></h2>
+      </div>
+      <div class = "panel-body">
+        <div class="col-md-6">
+          <p>$<%= @gift.price %></p>
+          <p><%= @gift.description %></p>
+          <p><a href="<%= @gift.url %>", target="_blank">Buy here!</a></p>
+        </div>
+        <div class = "col-md-6">
+          <p><%= image_tag(@gift.image, :class => "gift_image_show") %></p>
+        </div>
+      </div>
+  </div> 
+  <%= link_to "Edit this gift", "/gifts/#{@gift.id}/edit", class: "btn btn-default" %>
+  <%= link_to "Delete this item", "/gifts/#{@gift.id}", class: "btn btn-danger", method: :delete %>
+</div>

@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1>Edit a gift:</h1>
+    <%= form_tag "/gifts/#{@gift.id}", method: :patch do %>
+      <div class="form-group">
+        <%= label_tag :name %>
+        <%= text_field_tag :name, @gift.name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :price %>
+        <%= text_field_tag :price, @gift.price, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :description %>
+        <%= text_field_tag :description, @gift.description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :image %>
+        <%= text_field_tag :image, @gift.image, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :url %>
+        <%= text_field_tag :url, @gift.url, class: "form-control" %>
+      </div>
+      <%= submit_tag "Post update!", class: "btn btn-primary" %>
+    <% end %>
+</div>
